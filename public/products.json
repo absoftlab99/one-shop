@@ -1,0 +1,54 @@
+[
+    {
+        "id":1,
+        "name": "TP Link AC1200 Dual-Band Wi-Fi Router (Archer C54)",
+        "thumbnail": "",
+        "price": 2300,
+        "sale_price": 2150,
+        "brand": "TP Link",
+        "category": "Internet Accesories",
+        "rating": "5.0",
+        "discount": "20%",
+        "stock_count": 20,
+        "wishlist": false
+    },
+    {
+        "id":2,
+        "name": "Lenevo Thinkpad pro 2.0",
+        "thumbnail": "",
+        "price": 25000,
+        "sale_price": 22500,
+        "brand": "Lenevo",
+        "category": "Computer",
+        "rating": "4.5",
+        "discount": "20%",
+        "stock_count": 10,
+        "wishlist": false
+    },
+    {
+        "id":3,
+        "name": "Adata UV128/128GB Flashdrive",
+        "thumbnail": "",
+        "price": 2900,
+        "sale_price": 2850,
+        "brand": "Adata",
+        "category": "Storage Accesories",
+        "rating": "2.0",
+        "discount": "20%",
+        "stock_count": 50,
+        "wishlist": false
+    },
+    {
+        "id":4,
+        "name": "Hikvision 21 inch color Monitor with HDMI port",
+        "thumbnail": "",
+        "price": 10000,
+        "sale_price": 9500,
+        "brand": "Hikvision",
+        "category": "Monitor",
+        "rating": "4.0",
+        "discount": "20%",
+        "stock_count": 12,
+        "wishlist": false
+    }
+]

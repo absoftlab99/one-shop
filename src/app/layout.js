@@ -3,6 +3,7 @@ import "./globals.css";
 import { GlobalContextProvider } from "@/contexts/GlobalContext";
 import Header from "@/components/Shared/Header";
 import HeaderTop from "@/components/Shared/HeaderTop";
+import Footer from "@/components/Shared/Footer";
 const raleway = Raleway({subsets: ["latin"], weight: ["200", "300", "400", "600", "700", "900"]})
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
               {children}
             </div>
           </div>
+          <Footer></Footer>
         </body>
       </GlobalContextProvider>
     </html>

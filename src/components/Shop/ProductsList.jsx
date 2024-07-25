@@ -1,9 +1,10 @@
 'use client'
 import { IconEye, IconHeart, IconHeartFilled, IconShoppingCartPlus, IconStarFilled } from '@tabler/icons-react';
 import React, { useState } from 'react';
+import QuickView from './QuickView';
 
 const ProductsList = ({ product }) => {
-    const { name, price, sale_price, brand, category, rating, discount, stock_count } = product;
+    const { id, name, price, sale_price, brand, category, rating, discount, stock_count } = product;
     const [wishlist, setWishlist] = useState(false);
     return (
         <div className='flex border mb-5 w-full'>
@@ -39,13 +40,14 @@ const ProductsList = ({ product }) => {
                     </div>
                     <div className="h-full flex items-center">
                         <div className="flex flex-col items-center justify-center gap-2">
-                            <div className="bg-primary rounded-full p-2"><IconEye className='text-white' size={20}></IconEye></div>
-                            <div className="bg-primary rounded-full p-2"><IconShoppingCartPlus className='text-white' size={20}></IconShoppingCartPlus></div>
+                        <div onClick={() => document.getElementById(`${id}`).showModal()} className="bg-primary rounded-full p-2 cursor-pointer"><IconEye className='text-white' size={20}></IconEye></div>
+                        <div className="bg-primary rounded-full p-2 cursor-pointer"><IconShoppingCartPlus className='text-white' size={20}></IconShoppingCartPlus></div>
                             <div className="bg-primary rounded-full p-2">{wishlist ? <IconHeartFilled onClick={() => setWishlist(false)} className='text-error cursor-pointer' size={20}></IconHeartFilled> : <IconHeart onClick={() => setWishlist(true)} className='text-white cursor-pointer' size={20}></IconHeart>}</div>
                         </div>
                     </div>
                 </div>
             </div>
+            <QuickView product={product}></QuickView>
         </div>
     );
 };

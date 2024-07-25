@@ -1,7 +1,8 @@
 import { IconEye, IconHeart, IconHeartFilled, IconShoppingCartPlus, IconStarFilled } from '@tabler/icons-react';
 import React, { useState } from 'react';
-const ProductsGrid = ({ product}) => {
-    const { name, price, sale_price, brand, category, rating, discount, stock_count } = product;
+import QuickView from './QuickView';
+const ProductsGrid = ({ product }) => {
+    const { id, name, price, sale_price, brand, category, rating, discount, stock_count } = product;
     const [wishlist, setWishlist] = useState(false);
     // console.log(name);
     return (
@@ -11,9 +12,9 @@ const ProductsGrid = ({ product}) => {
                     <div className='skeleton h-[250px] w-full rounded-b-none'></div>
                     <div className='absolute top-5 left-0 bg-primary rounded-full rounded-s-none px-2 text-white text-[12px] md:text-[14px]'>{brand}</div>
                     <div className="flex gap-2 absolute bottom-4 right-4">
-                        <div className="bg-primary rounded-full p-2"><IconEye className='text-white' size={20}></IconEye></div>
-                        <div className="bg-primary rounded-full p-2"><IconShoppingCartPlus className='text-white' size={20}></IconShoppingCartPlus></div>
-                        <div className="bg-primary rounded-full p-2">{wishlist ? <IconHeartFilled onClick={()=>setWishlist(false)} className='text-error cursor-pointer' size={20}></IconHeartFilled> : <IconHeart onClick={()=>setWishlist(true)} className='text-white cursor-pointer' size={20}></IconHeart>}</div>
+                        <div onClick={() => document.getElementById(`${id}`).showModal()} className="bg-primary rounded-full p-2 cursor-pointer"><IconEye className='text-white' size={20}></IconEye></div>
+                        <div className="bg-primary rounded-full p-2 cursor-pointer"><IconShoppingCartPlus className='text-white' size={20}></IconShoppingCartPlus></div>
+                        <div className="bg-primary rounded-full p-2 cursor-pointer">{wishlist ? <IconHeartFilled onClick={() => setWishlist(false)} className='text-error cursor-pointer' size={20}></IconHeartFilled> : <IconHeart onClick={() => setWishlist(true)} className='text-white cursor-pointer' size={20}></IconHeart>}</div>
                     </div>
                 </figure>
                 <div className="card-body p-4 flex flex-col justify-between min-h-[175px]">
@@ -44,6 +45,7 @@ const ProductsGrid = ({ product}) => {
                     <button className='btn btn-sm btn-primary rounded-full'>Add to Cart</button>
                 </div>
             </div>
+            <QuickView product={product}></QuickView>
         </div>
     );
 };

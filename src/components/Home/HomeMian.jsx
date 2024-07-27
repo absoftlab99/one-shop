@@ -1,12 +1,12 @@
 import React from 'react';
-import Slider from './Slider';
 import Info from './Info';
+import Sliders from './Sliders';
 
 const HomeMian = () => {
     
     return (
         <div className='my-10'>
-            <Slider></Slider>
+            <Sliders></Sliders>
             <Info></Info>
         </div>
     );

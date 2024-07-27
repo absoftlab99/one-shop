@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/tmhLjvm/Essential-computer-2-big-banner.jpg",
+        "alt": "slider 1"
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/9nc7Bbz/Gadget-Big-Banner-1-1.jpg",
+        "alt": "slider 2"
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/yYRCG2y/Life-Style-big-banner-copy.jpg",
+        "alt": "slider 3"
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/0BCyzFC/One-Plus-Nord-CE-4-Lite-5-G-Big-Banner-3-1.jpg",
+        "alt": "slider 4"
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co/qWWsL2T/refrigerator-big-banner-2.jpg",
+        "alt": "slider 5"
+    }
+]

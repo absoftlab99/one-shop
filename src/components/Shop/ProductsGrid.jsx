@@ -23,7 +23,7 @@ const ProductsGrid = ({ product }) => {
     // }
     return (
         <div className='col-span-12 md:col-span-4 lg:col-span-3'>
-            <div onMouseEnter={() => { setAnimate(true); toggleAnimation() }} onMouseLeave={() => setAnimate(false)} className="card card-bordered awesome-shadow">
+            <div onMouseEnter={() => { setAnimate(true); toggleAnimation() }} onMouseLeave={() => setAnimate(false)} className="card card-bordered awesome-shadow hover:scale-105 transition-all duration-500">
                 <figure className='relative'>
                     {/* <div className='skeleton h-[250px] w-full rounded-b-none'></div> */}
                     <Image className={animate ? 'scale-110 transition-all duration-500' : 'scale-100 transition-all duration-500'} src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
@@ -50,24 +50,24 @@ const ProductsGrid = ({ product }) => {
                                 <p className='text-[14px] md:text-[18px]'>Price:</p>
                                 <div className="">
                                     <p className='font-bold text-[14px] md:text-[18px]'>{sale_price} BDT</p>
-                                    <s className='text-gray-400'>{price} BDT</s>
+                                    <s className='text-error'>{price} BDT</s>
                                 </div>
                             </div>
                             <div className="">
-                                <p className='flex gap-2 items-center'><IconStarFilled className='text-warning' size={20}></IconStarFilled> {rating}</p>
+                                <p className='flex gap-2 items-center'><IconStarFilled className='text-yellow-400' size={20}></IconStarFilled> {rating}</p>
                             </div>
                         </div>
                         <div className="flex justify-between">
-                            <p>In-stock: {stock_count}</p>
-                            <p className='text-end'>{category}</p>
+                            <p className='text-success'>In-stock: <span className='font-bold'>{stock_count}</span></p>
+                            <p className='text-end cursor-pointer text-primary hover:underline'>{category}</p>
                         </div>
                     </div>
                 </div>
                 <div className="flex gap-2 mt-5 px-4 pb-4">
                     <div className="join">
-                        <div onClick={()=> setQuantity(quantity - 1)} className="btn rounded-full btn-sm join-item"><IconMinus size={15}/></div>
-                        <input className='input input-sm input-bordered join-item w-full max-w-[50px] text-center' type="text" name="quantity" id="quantity" value={quantity} />
-                        <div onClick={()=> setQuantity(quantity + 1)} className="btn rounded-full btn-sm join-item"><IconPlus size={15}/></div>
+                        <div onClick={()=> setQuantity(quantity - 1)} className="btn btn-primary btn-outline rounded-full btn-sm join-item"><IconMinus size={15}/></div>
+                        <input className='input input-sm input-primary join-item w-full max-w-[50px] text-center focus-visible:outline-none' type="text" name="quantity" id="quantity" value={quantity} />
+                        <div onClick={()=> setQuantity(quantity + 1)} className="btn btn-primary btn-outline rounded-full btn-sm join-item"><IconPlus size={15}/></div>
                     </div>
                     <button className='btn btn-sm btn-primary rounded-full'>Add to Cart</button>
                 </div>

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import logo from '../../assets/image/logo.png';
+import { IconHeartFilled, IconSearch, IconShoppingBag } from '@tabler/icons-react';
 
 const Header = () => {
     return (
@@ -37,27 +38,23 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Image src={logo} height={60} width={60} alt='logo'/>
+                        <Image src={logo} height={60} width={60} alt='logo' />
                         <h1 className='text-black font-bold text-[28px] md:text-[36px]'>One <span className='text-primary font-ext'>Shop</span></h1>
                     </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
-                    </ul>
+                <div className="navbar-center hidden lg:flex join">
+                    <input type="text" placeholder="Search for products" className="focus-visible:outline-none input text-[14px] text-light input-bordered join-item rounded-full w-[400px]" />
+                    <select className="select select-bordered w-[200px] join-item focus-visible:outline-none">
+                        <option disabled selected>Select Category</option>
+                        <option>Computer Accessories</option>
+                        <option>Storage</option>
+                        <option>Camera</option>
+                    </select>
+                    <button className='border-2 btn text-gray-500 join-item rounded-full px-4' type="button"><IconSearch></IconSearch></button>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+                <div className="navbar-end gap-2">
+                    <a className="btn"><IconHeartFilled className='text-error'/> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
+                    <a className="btn"><IconShoppingBag/> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
                 </div>
             </div>
         </div>

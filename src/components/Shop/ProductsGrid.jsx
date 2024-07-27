@@ -1,5 +1,5 @@
 'use client'
-import { IconEye, IconHeart, IconHeartFilled, IconShoppingCartPlus, IconStarFilled } from '@tabler/icons-react';
+import { IconEye, IconHeart, IconHeartFilled, IconMinus, IconPlus, IconShoppingCartPlus, IconStarFilled } from '@tabler/icons-react';
 import React, { useState } from 'react';
 import QuickView from './QuickView';
 import Image from 'next/image';
@@ -8,15 +8,22 @@ import { motion } from 'framer-motion';
 const ProductsGrid = ({ product }) => {
     const { id, name, thumbnail, short_description, description, price, sale_price, brand, category, rating, discount, stock_count } = product;
     const [wishlist, setWishlist] = useState(false);
-    const [animate, setAnimate] = useState(false)
+    const [animate, setAnimate] = useState(false);
+    const [quantity, setQuantity] = useState(1);
     // console.log(name);
 
     const toggleAnimation = () => {
         setAnimate(!animate)
     };
+    // const minusQuantity = () =>{
+    //     setQuantity(quantity - 1)
+    // }
+    // const addQuantity = () =>{
+    //     setQuantity(quantity + 1)
+    // }
     return (
         <div className='col-span-12 md:col-span-4 lg:col-span-3'>
-            <div onMouseEnter={() => { setAnimate(true); toggleAnimation() }} onMouseLeave={() => setAnimate(false)} className="card card-bordered border-primary">
+            <div onMouseEnter={() => { setAnimate(true); toggleAnimation() }} onMouseLeave={() => setAnimate(false)} className="card card-bordered awesome-shadow">
                 <figure className='relative'>
                     {/* <div className='skeleton h-[250px] w-full rounded-b-none'></div> */}
                     <Image className={animate ? 'scale-110 transition-all duration-500' : 'scale-100 transition-all duration-500'} src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
@@ -27,9 +34,9 @@ const ProductsGrid = ({ product }) => {
                     transition={{ ease: "easeIn", duration: animate ? 0.3 : 0.3 }}
                     >
                         <div className={`flex gap-2 absolute bottom-4 right-4 bg-primary p-2 rounded-xl`}>
-                            <div onClick={() => document.getElementById(`${id}`).showModal()} className="bg-primary rounded-full p-2 cursor-pointer"><IconEye className='text-white' size={20}></IconEye></div>
-                            <div className="bg-accent rounded-full p-2 cursor-pointer"><IconShoppingCartPlus className='text-white' size={20}></IconShoppingCartPlus></div>
-                            <div className="bg-primary rounded-full p-2 cursor-pointer">{wishlist ? <IconHeartFilled onClick={() => setWishlist(false)} className='text-error cursor-pointer' size={20}></IconHeartFilled> : <IconHeart onClick={() => setWishlist(true)} className='text-white cursor-pointer' size={20}></IconHeart>}</div>
+                            <div onClick={() => document.getElementById(`${id}`).showModal()} className="p-2 cursor-pointer"><IconEye className='text-white' size={20}></IconEye></div>
+                            <div className="p-2 cursor-pointer"><IconShoppingCartPlus className='text-white' size={20}></IconShoppingCartPlus></div>
+                            <div className="p-2 cursor-pointer">{wishlist ? <IconHeartFilled onClick={() => setWishlist(false)} className='text-error cursor-pointer' size={20}></IconHeartFilled> : <IconHeart onClick={() => setWishlist(true)} className='text-white cursor-pointer' size={20}></IconHeart>}</div>
                         </div>
                     </motion.dev>
                 </figure>
@@ -56,8 +63,12 @@ const ProductsGrid = ({ product }) => {
                         </div>
                     </div>
                 </div>
-                <div className="card-actions flex gap-2 mt-5 px-4 pb-4">
-                    <button className='btn btn-sm btn-primary rounded-full'>Buy Now</button>
+                <div className="flex gap-2 mt-5 px-4 pb-4">
+                    <div className="join">
+                        <div onClick={()=> setQuantity(quantity - 1)} className="btn rounded-full btn-sm join-item"><IconMinus size={15}/></div>
+                        <input className='input input-sm input-bordered join-item w-full max-w-[50px] text-center' type="text" name="quantity" id="quantity" value={quantity} />
+                        <div onClick={()=> setQuantity(quantity + 1)} className="btn rounded-full btn-sm join-item"><IconPlus size={15}/></div>
+                    </div>
                     <button className='btn btn-sm btn-primary rounded-full'>Add to Cart</button>
                 </div>
             </div>

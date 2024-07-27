@@ -2,14 +2,16 @@
 import { IconEye, IconHeart, IconHeartFilled, IconShoppingCartPlus, IconStarFilled } from '@tabler/icons-react';
 import React, { useState } from 'react';
 import QuickView from './QuickView';
+import Image from 'next/image';
 
 const ProductsList = ({ product }) => {
-    const { id, name, price, sale_price, brand, category, rating, discount, stock_count } = product;
+    const { id, name, thumbnail, short_description, description, price, sale_price, brand, category, rating, discount, stock_count } = product;
     const [wishlist, setWishlist] = useState(false);
     return (
-        <div className='flex border mb-5 w-full'>
+        <div className='flex border border-primary rounded-xl mb-5 w-full overflow-hidden'>
             <figure className='relative'>
-                <div className='skeleton h-full w-[300px] rounded-e-none'></div>
+                {/* <div className='skeleton h-full w-[300px] rounded-e-none'></div> */}
+                <Image className='w-full h-full' src={thumbnail} width={300} height={300} style={{ width: '100%', height: '187px' }} alt='product image'/>
                 <div className='absolute top-5 left-0 bg-primary rounded-full rounded-s-none px-2 text-white text-[12px] md:text-[14px]'>{brand}</div>
             </figure>
             <div className="card-body p-4">

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const QuickView = ({product}) => {
-    const { id, name, price, sale_price, brand, category, rating, discount, stock_count } = product;
+    const { id, name, short_description, description, price, sale_price, brand, category, rating, discount, stock_count } = product;
 
     return (
         <div>

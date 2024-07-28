@@ -9,7 +9,7 @@ const ProductsMain = () => {
     const [products, setProducts] = useState([])
     const [wishlist, setWishlist] = useState(false);
     const [loading, setLoading] = useState(true)
-    const [loadProducts, setLoadProducts] = useState(8);
+    const [loadProducts, setLoadProducts] = useState(12);
     const loadMoreProducts = () =>{
         setLoadProducts(prevCount => prevCount + 8)
     };
@@ -24,7 +24,7 @@ const ProductsMain = () => {
     // console.log(products);
     return (
         <div>
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center justify-between mb-5 px-5 lg:px-0">
                 <h1 className='text-[28px] md:text-[36px] font-semibold'>Fetured Products</h1>
                 <div className='flex gap-2 items-center'>
                     <IconList onClick={() => {setView(false); setLoadProducts(4)}} className={`cursor-pointer ${view ? 'text-gray-400' : 'text-black'}`}></IconList>
@@ -32,7 +32,10 @@ const ProductsMain = () => {
                 </div>
             </div>
             {
-                view ? <div className='grid grid-cols-12 md:gap-8 justify-between'> {products.slice(0, loadProducts).map(product => <ProductsGrid key={product.id} product={product}></ProductsGrid>)}</div> : products.slice(0, loadProducts).map(product => <ProductsList key={product.id} product={product} ></ProductsList>)
+                view ? 
+                <div className='grid grid-cols-12 md:gap-8 justify-between px-5 lg:px-0'> {products.slice(0, loadProducts).map(product => <ProductsGrid key={product.id} product={product}></ProductsGrid>)}</div>
+                :
+                <div className='px-5 lg:px-0'>{products.slice(0, loadProducts).map(product => <ProductsList key={product.id} product={product} ></ProductsList>)}</div>
             }
             <div className="grid place-content-center my-5">
                 {

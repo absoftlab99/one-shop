@@ -6,7 +6,7 @@ const HomeMian = () => {
     
     return (
         <div className='my-10'>
-            <Sliders></Sliders>
+            {/* <Sliders></Sliders> */}
             <Info></Info>
         </div>
     );

@@ -5,38 +5,9 @@ import { IconHeartFilled, IconSearch, IconShoppingBag } from '@tabler/icons-reac
 
 const Header = () => {
     return (
-        <div className='grid place-content-center bg-base-20 border-b-2'>
-            <div className="navbar lg:w-[1440px]">
+        <div className='grid lg:place-content-center bg-base-20 border-b-2 px-5 lg:px-0 w-full'>
+            <div className="navbar w-full lg:w-[1440px] px-0">
                 <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
-                        </ul>
-                    </div>
                     <div className="flex items-center gap-2">
                         <Image src={logo} height={60} width={60} alt='logo' />
                         <h1 className='text-black font-bold text-[28px] md:text-[36px]'>One <span className='text-primary font-ext'>Shop</span></h1>
@@ -52,9 +23,27 @@ const Header = () => {
                     </select>
                     <button className='border-2 btn text-gray-500 join-item rounded-full px-4' type="button"><IconSearch></IconSearch></button>
                 </div>
-                <div className="navbar-end gap-2">
-                    <a className="btn"><IconHeartFilled className='text-error'/> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
-                    <a className="btn"><IconShoppingBag/> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
+                <div className="navbar-end gap-2 hidden md:flex">
+                    <a className="btn"><IconHeartFilled className='text-error' /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
+                    <a className="btn"><IconShoppingBag /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
+                </div>
+                <div className="navbar-end">
+                    <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

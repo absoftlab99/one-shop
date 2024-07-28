@@ -4,8 +4,8 @@ import React from 'react';
 
 const HeaderTop = () => {
     return (
-        <div className='bg-primary md:grid place-content-center hidden py-2'>
-            <div className='flex justify-between lg:w-[1440px]'>
+        <div className='bg-primary md:grid lg:place-content-center hidden py-2 px-5 lg:px-0'>
+            <div className='flex justify-between w-full lg:w-[1440px]'>
                 <div className='flex gap-5'>
                     <Link href='mailto:support@oneshop.com' className="flex items-center gap-2 text-white">
                         <IconMail size={20}></IconMail>

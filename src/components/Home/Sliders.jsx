@@ -24,8 +24,9 @@ const Sliders = () => {
     },[])
 
     return (
-        <div className='w-full lg:w-[1440px] rounded-xl overflow-hidden z-9 px-5 lg:px-0'>
+        <div className='w-full rounded-xl overflow-hidden z-9 px-5 lg:px-0'>
             <Swiper
+                className='overflow-hidden'
                 slidesPerView={1}
                 spaceBetween={30}
                 autoplay={{

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Info = () => {
     return (
-        <div className='grid grid-cols-12 gap-5 lg:gap-10 mt-5 px-5 lg:px-0'>
+        <div className='grid grid-cols-12 gap-5 lg:gap-10 mt-5 px-5 lg:px-0 w-full'>
             <div className="col-span-12 md:col-span-6 lg:col-span-3 awesome-shadow">
                 <div className="bg-primary rounded-xl flex flex-col items-center justify-center py-5 relative overflow-hidden">
                     <IconTruck stroke={1} size={50} className='text-white'></IconTruck>

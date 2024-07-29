@@ -8,9 +8,9 @@ const Header = () => {
         <div className='grid lg:place-content-center bg-base-20 border-b-2 px-5 lg:px-0 w-full'>
             <div className="navbar w-full lg:w-[1440px] px-0">
                 <div className="navbar-start">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 w-full">
                         <Image src={logo} height={60} width={60} alt='logo' />
-                        <h1 className='text-black font-bold text-[28px] md:text-[36px]'>One <span className='text-primary font-ext'>Shop</span></h1>
+                        <h1 className='text-black font-bold text-[24px] md:text-[36px]'>One <span className='text-primary font-ext'>Shop</span></h1>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex join">

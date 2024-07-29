@@ -24,18 +24,18 @@ const ProductsMain = () => {
     // console.log(products);
     return (
         <div>
-            <div className="flex items-center justify-between mb-5 px-5 lg:px-0">
+            <div className="flex items-center justify-between mb-5 px-5 lg:px-0 w-full">
                 <h1 className='text-[28px] md:text-[36px] font-semibold'>Fetured Products</h1>
                 <div className='flex gap-2 items-center'>
-                    <IconList onClick={() => {setView(false); setLoadProducts(4)}} className={`cursor-pointer ${view ? 'text-gray-400' : 'text-black'}`}></IconList>
-                    <IconGrid4x4 onClick={() => {setView(true); setLoadProducts(8)}} className={`cursor-pointer ${view ? 'text-black' : 'text-gray-400'}`}></IconGrid4x4>
+                    <IconList onClick={() => {setView(false); setLoadProducts(4)}} className={`cursor-pointer ${view ? 'text-gray-400' : 'text-black'}`}/>
+                    <IconGrid4x4 onClick={() => {setView(true); setLoadProducts(8)}} className={`cursor-pointer ${view ? 'text-black' : 'text-gray-400'}`}/>
                 </div>
             </div>
             {
                 view ? 
-                <div className='grid grid-cols-12 md:gap-8 justify-between px-5 lg:px-0'> {products.slice(0, loadProducts).map(product => <ProductsGrid key={product.id} product={product}></ProductsGrid>)}</div>
+                <div className='grid grid-cols-12 gap-5 md:gap-8 justify-between px-5 lg:px-0 w-full'> {products.slice(0, loadProducts).map(product => <ProductsGrid key={product.id} product={product}></ProductsGrid>)}</div>
                 :
-                <div className='px-5 lg:px-0'>{products.slice(0, loadProducts).map(product => <ProductsList key={product.id} product={product} ></ProductsList>)}</div>
+                <div className='px-5 lg:px-0 w-full'>{products.slice(0, loadProducts).map(product => <ProductsList key={product.id} product={product} ></ProductsList>)}</div>
             }
             <div className="grid place-content-center my-5">
                 {
@@ -43,7 +43,7 @@ const ProductsMain = () => {
                         ?
                         <div className='loading loading-bars bg-primary'></div>
                         :
-                        <button onClick={loadMoreProducts} className={`btn btn-primary rounded-full ${products.length <= loadProducts ? 'hidden' : ''}`} type="button">Load More <IconArrowDown></IconArrowDown></button>
+                        <button onClick={loadMoreProducts} className={`btn btn-primary rounded-full ${products.length <= loadProducts ? 'hidden' : 'flex'}`} type="button">Load More <IconArrowDown></IconArrowDown></button>
                 }
             </div>
         </div>

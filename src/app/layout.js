@@ -20,8 +20,8 @@ export default function RootLayout({ children }) {
           <HeaderTop></HeaderTop>
           <Header></Header>
           <HeaderBottom></HeaderBottom>
-          <div className="grid place-content-center">
-            <div className="min-h-[90vh] lg:w-[1440px]">
+          <div className="lg:grid place-content-center w-full">
+            <div className="lg:min-h-[90vh] w-full lg:w-[1440px]">
               {children}
             </div>
           </div>

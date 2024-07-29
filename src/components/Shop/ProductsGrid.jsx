@@ -29,8 +29,9 @@ const ProductsGrid = ({ product }) => {
                     <Image className={animate ? 'scale-110 transition-all duration-500' : 'scale-100 transition-all duration-500'} src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
                     <div className='absolute top-5 left-0 bg-primary rounded-full rounded-s-none px-2 text-white text-[12px] md:text-[14px]'>{brand}</div>
                     <motion.dev
+                    className=''
                     initial={{ y: 0 }}
-                    animate={{ y: animate ? 170 : 250 }}
+                    animate={{ y: animate ? 170 : 260 }}
                     transition={{ ease: "easeIn", duration: animate ? 0.3 : 0.3 }}
                     >
                         <div className={`flex gap-2 absolute bottom-4 right-4 bg-primary p-2 rounded-xl`}>

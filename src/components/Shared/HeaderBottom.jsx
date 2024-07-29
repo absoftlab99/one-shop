@@ -4,7 +4,7 @@ import React from 'react';
 
 const HeaderBottom = () => {
     return (
-        <div className='grid lg:place-content-center border-b-2 z-10 px-5 lg:px-0'>
+        <div className='md:grid lg:place-content-center border-b-2 z-10 px-5 lg:px-0 hidden'>
             <nav className='w-full lg:w-[1440px] grid grid-cols-12 items-center'>
                 <div className='col-span-9 flex items-center justify-start gap-5 w-full'>
                     <div className="">

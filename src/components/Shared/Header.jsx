@@ -15,20 +15,20 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex join">
-                    <input type="text" placeholder="Search for products" className="focus-visible:outline-none input text-[14px] text-light input-bordered join-item rounded-full w-[400px]" />
-                    <select className="select select-bordered w-[200px] join-item focus-visible:outline-none">
+                    <select className="select select-bordered w-full lg:w-[200px] rounded-full join-item focus-visible:outline-none">
                         <option disabled selected>Select Category</option>
                         <option>Computer Accessories</option>
                         <option>Storage</option>
                         <option>Camera</option>
                     </select>
+                    <input type="text" placeholder="Search for products" className="focus-visible:outline-none input text-[14px] text-light input-bordered join-item w-full lg:w-[400px]" />
                     <button className='border-2 btn text-gray-500 join-item rounded-full px-4' type="button"><IconSearch></IconSearch></button>
                 </div>
-                <div className="navbar-end gap-2 hidden md:flex">
+                <div className="navbar-end gap-2 hidden md:flex place-items-end">
                     <a className="btn"><IconHeartFilled className='text-error' /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
                     <a className="btn"><IconShoppingBag /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end lg:hidden">
                     <Drawer></Drawer>
                 </div>
             </div>

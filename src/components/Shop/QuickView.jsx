@@ -1,8 +1,21 @@
+'use client'
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import Swiper core and required modules
+import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Thumbs } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
 
 const QuickView = ({ product }) => {
     const { id, thumbnail, name, short_description, description, price, sale_price, brand, category, rating, discount, stock_count } = product;
+
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
         <div>
@@ -12,7 +25,53 @@ const QuickView = ({ product }) => {
                 <div className="modal-box w-11/12 max-w-5xl">
                     <div className="grid grid-cols-12 gap-5">
                         <div className="col-span-12 md:col-span-5">
-                            <Image className="border rounded-xl" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                            <Swiper
+                                modules={[Thumbs, Pagination, A11y]} thumbs={{ swiper: thumbsSwiper }}
+                                slidesPerView={1}
+                                pagination={{ clickable: true }}
+                                scrollbar={{ draggable: true }}
+                            >
+                                <SwiperSlide className='rounded-xl cursor-grabbing'>
+                                    <Image className="border rounded-xl" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                </SwiperSlide>
+                                <SwiperSlide className='rounded-xl cursor-grabbing'>
+                                    <Image className="border rounded-xl" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                </SwiperSlide>
+                                <SwiperSlide className='rounded-xl cursor-grabbing'>
+                                    <Image className="border rounded-xl" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                </SwiperSlide>
+                                <SwiperSlide className='rounded-xl cursor-grabbing'>
+                                    <Image className="border rounded-xl" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                </SwiperSlide>
+                            </Swiper>
+                            <div className="flex gap-2 items-center">
+                                <Swiper
+                                    className='mt-3'
+                                    modules={[Thumbs, A11y]}
+                                    watchSlidesProgress
+                                    onSwiper={setThumbsSwiper}
+                                    slidesPerView={4}
+                                    autoplay={{
+                                        delay: 2500,
+                                        disableOnInteraction: false,
+                                    }}
+                                    loop={true}
+                                >
+                                    <SwiperSlide className='p-2 cursor-pointer'>
+                                        <Image className="border" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                    </SwiperSlide>
+                                    <SwiperSlide className='p-2 cursor-pointer'>
+                                        <Image className="border" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                    </SwiperSlide>
+                                    <SwiperSlide className='p-2 cursor-pointer'>
+                                        <Image className="border" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                    </SwiperSlide>
+                                    <SwiperSlide className='p-2 cursor-pointer'>
+                                        <Image className="border" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
+                                    </SwiperSlide>
+                                </Swiper>
+                            </div>
+
                         </div>
                         <div className="col-span-12 md:col-span-7">
                             <div className="badge badge-warning text-white">{discount}</div>

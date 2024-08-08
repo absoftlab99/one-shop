@@ -24,7 +24,7 @@ const ProductsGrid = ({ product }) => {
     return (
         <div className='col-span-12 md:col-span-4 lg:col-span-3'>
             <div onMouseEnter={() => { setAnimate(true); toggleAnimation() }} onMouseLeave={() => setAnimate(false)} className="card card-bordered awesome-shadow hover:scale-105 transition-all duration-500">
-                <figure className='relative'>
+                <figure onClick={() => document.getElementById(`${id}`).showModal()} className='relative cursor-'>
                     {/* <div className='skeleton h-[250px] w-full rounded-b-none'></div> */}
                     <Image className={animate ? 'scale-110 transition-all duration-500' : 'scale-100 transition-all duration-500'} src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
                     <div className='absolute top-5 left-0 bg-primary rounded-full rounded-s-none px-2 text-white text-[12px] md:text-[14px]'>{brand}</div>

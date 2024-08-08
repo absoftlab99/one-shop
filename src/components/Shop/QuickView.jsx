@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Swiper core and required modules
-import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Pagination, A11y } from 'swiper/modules';
 import { Thumbs } from 'swiper/modules';
 
 // Import Swiper styles
@@ -44,7 +44,7 @@ const QuickView = ({ product }) => {
                                     <Image className="border rounded-xl" src={thumbnail} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} alt='product image' />
                                 </SwiperSlide>
                             </Swiper>
-                            <div className="flex gap-2 items-center">
+                            <div className="">
                                 <Swiper
                                     className='mt-3'
                                     modules={[Thumbs, A11y]}

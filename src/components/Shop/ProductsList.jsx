@@ -9,8 +9,8 @@ const ProductsList = ({ product }) => {
     const [wishlist, setWishlist] = useState(false);
     const [quantity, setQuantity] = useState(1);
     return (
-        <div onClick={() => document.getElementById(`${id}`).showModal()} className='flex border awesome-shadow rounded-xl mb-5 w-full overflow-hidden hover:scale-105 transition-all duration-500'>
-            <figure className='relative hidden md:flex'>
+        <div className='flex border awesome-shadow rounded-xl mb-5 w-full overflow-hidden hover:scale-105 transition-all duration-500'>
+            <figure onClick={() => document.getElementById(`${id}`).showModal()} className='relative hidden md:flex cursor-pointer'>
                 {/* <div className='skeleton h-full w-[300px] rounded-e-none'></div> */}
                 <Image className='w-full h-full' src={thumbnail} width={300} height={300} style={{ width: '100%', height: '148px' }} alt='product image' />
                 <div className='absolute top-5 left-0 bg-primary rounded-full rounded-s-none px-2 text-white text-[12px] md:text-[14px]'>{brand}</div>
@@ -18,7 +18,7 @@ const ProductsList = ({ product }) => {
             <div className="card-body p-4">
                 <div className='grid grid-cols-12 justify-between'>
                     <div className='col-span-12 md:col-span-7'>
-                        <div className="card-title">
+                        <div onClick={() => document.getElementById(`${id}`).showModal()} className="card-title cursor-pointer">
                             {name}
                         </div>
                         <div className='flex gap-10 mt-2'>
@@ -44,7 +44,7 @@ const ProductsList = ({ product }) => {
                                 <input className='focus-visible:outline-none input input-sm input-primary join-item w-full max-w-[50px] text-center' type="text" name="quantity" id="quantity" value={quantity} />
                                 <div onClick={() => setQuantity(quantity + 1)} className="btn btn-primary btn-outline rounded-full btn-sm join-item"><IconPlus size={15} /></div>
                             </div>
-                            <button className='btn btn-sm btn-primary rounded-full'>Add to Cart</button>
+                            <button className={`btn btn-sm btn-primary rounded-full ${quantity <= 0 ? 'btn-disabled': ''}`}>Add to Cart</button>
                         </div>
                         <div className="h-full md:flex items-center hidden">
                             <div className="flex flex-col items-center justify-center gap-2">

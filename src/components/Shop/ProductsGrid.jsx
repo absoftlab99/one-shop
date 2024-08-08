@@ -70,7 +70,7 @@ const ProductsGrid = ({ product }) => {
                         <input className='input input-sm input-primary join-item w-full max-w-[50px] text-center focus-visible:outline-none' type="text" name="quantity" id="quantity" value={quantity} />
                         <div onClick={()=> setQuantity(quantity + 1)} className="btn btn-primary btn-outline rounded-full btn-sm join-item"><IconPlus size={15}/></div>
                     </div>
-                    <button className='btn btn-sm btn-primary rounded-full'>Add to Cart</button>
+                    <button className={`btn btn-sm btn-primary rounded-full ${quantity <= 0 ? 'btn-disabled': ''}`}>Add to Cart</button>
                 </div>
             </div>
             <QuickView product={product}></QuickView>

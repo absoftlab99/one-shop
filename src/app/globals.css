@@ -5,3 +5,7 @@
 .awesome-shadow{
     box-shadow: 0px 10px 61px 0px #d1d0d0;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 5px !important;
+}

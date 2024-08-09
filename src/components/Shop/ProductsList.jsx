@@ -56,7 +56,7 @@ const ProductsList = ({ product }) => {
                     </div>
                 </div>
             </div>
-            <QuickView product={product}></QuickView>
+            <QuickView product={product} quantity={quantity} setQuantity={setQuantity}></QuickView>
         </div>
     );
 };

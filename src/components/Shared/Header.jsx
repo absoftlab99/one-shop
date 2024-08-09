@@ -3,6 +3,8 @@ import React from 'react';
 import logo from '../../assets/image/logo.png';
 import { IconHeartFilled, IconSearch, IconShoppingBag } from '@tabler/icons-react';
 import Drawer from './Drawer';
+import CartDrawer from '../Cart/CartDrawer';
+import WishlistDrawer from '../Cart/WishlistDrawer';
 
 const Header = () => {
     return (
@@ -24,13 +26,18 @@ const Header = () => {
                     <input type="text" placeholder="Search for products" className="focus-visible:outline-none input text-[14px] text-light input-bordered join-item w-full lg:w-[400px]" />
                     <button className='border-2 btn text-gray-500 join-item rounded-full px-4' type="button"><IconSearch></IconSearch></button>
                 </div>
-                <div className="navbar-end gap-2 hidden md:flex place-items-end">
-                    <a className="btn"><IconHeartFilled className='text-error' /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
-                    <a className="btn"><IconShoppingBag /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></a>
+                <div className="navbar-end gap-2 hidden md:flex items-center place-items-end">
+                    <label htmlFor='my-drawer-6' className="btn btn-ghost"><IconHeartFilled className='text-error' /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></label>
+                    <p className='text-neutral text-[18px]'>|</p>
+                    <label htmlFor='my-drawer-5' className="btn btn-ghost"><IconShoppingBag /> <span className='text-white h-6 w-6 text-[14px] bg-primary rounded-full p-1'>2</span></label>
                 </div>
                 <div className="navbar-end lg:hidden">
                     <Drawer></Drawer>
                 </div>
+            </div>
+            <div className='hidden lg:block'>
+                <CartDrawer></CartDrawer>
+                <WishlistDrawer></WishlistDrawer>
             </div>
         </div>
     );
